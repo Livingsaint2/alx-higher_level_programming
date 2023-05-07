@@ -7,5 +7,4 @@ class LockedClass:
     """
     Defines attributes called 'first_name'.
     """
-
     __slots__ = ["first_name"]
