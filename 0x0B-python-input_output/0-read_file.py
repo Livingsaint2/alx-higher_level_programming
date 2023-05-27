@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """Write to a file"""
 
-#!/usr/bin/python3
-"""file manipulation using python"""
-
-
 def read_file(filename=""):
     """Read file template function.
     Args:
