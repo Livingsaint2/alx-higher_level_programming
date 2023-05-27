@@ -1,0 +1,128 @@
+The '7-base_geometry' module
+======================
+
+Using `BaseGeometry`
+-------------------
+
+test for a class that creates a new object based on a list:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Instanciate class
+
+    >>> bg = BaseGeometry()
+
+Working test:
+
+    >>> bg.integer_validator("my_int", 12)
+
+Age 0:
+
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+    >>> bg.integer_validator("power", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: power must be greater than 0
+
+Age negative:
+
+    >>> bg.integer_validator("my_int", -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+    >>> bg.integer_validator("power", -1000)
+    Traceback (most recent call last):
+    ...
+    ValueError: power must be greater than 0
+
+Age not int:
+
+    >>> bg.integer_validator("power", 2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: power must be an integer
+
+    >>> bg.integer_validator("power", "2.5")
+    Traceback (most recent call last):
+    ...
+    TypeError: power must be an integer
+
+Age special num cases:
+
+    >>> bg.integer_validator("power", int('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'nan'
+
+    >>> bg.integer_validator("power", int('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+    >>> bg.integer_validator("power", int('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+    >>> bg.integer_validator("", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError:  must be greater than 0
+
+    >>> bg.integer_validator("a", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: a must be greater than 0
+
+    >>> bg.integer_validator("list", [0])
+    Traceback (most recent call last):
+    ...
+    TypeError: list must be an integer
+
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+    >>> isinstance(bg, BaseGeometry)
+    True
+
+    >>> name = BaseGeometry(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: __init__() takes 1 positional argument but 2 were given
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    >>> bg.integer_validator("", )
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Sending non int values:
+
+    >>> bg.integer_validator("", True)
+    Traceback (most recent call last):
+    ...
+    TypeError:  must be an integer
+
+    >>> bg.integer_validator("", None)
+    Traceback (most recent call last):
+    ...
+    TypeError:  must be an integer
+
+    >>> bg.integer_validator("", (1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError:  must be an integer
+
+    >>> bg.integer_validator("", {"key", 3})
+    Traceback (most recent call last):
+    ...
+    TypeError:  must be an integer
