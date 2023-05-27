@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """Write to a file"""
 
 def read_file(filename=""):
