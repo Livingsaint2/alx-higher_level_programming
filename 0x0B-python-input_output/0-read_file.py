@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 """Write to a file"""
 
+#!/usr/bin/python3
+"""file manipulation using python"""
 
-def write_file(filename="", text=""):
-    """Writie a string to a UTF8 text file.
+
+def read_file(filename=""):
+    """Read file template function.
     Args:
-        filename (str): The name of the file to write.
-        text (str): The text to write to the file.
+        filename: path to the file that wants to be read.
     Returns:
-        The number of characters written.
+        Nothing.
     """
-    with open(filename, "w", encoding="utf-8") as f:
-        print( f.write(text))
+    with open(filename, "r") as my_file:
+        print(my_file.read(), end="")
+    my_file.close()
