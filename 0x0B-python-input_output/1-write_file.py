@@ -11,6 +11,6 @@ def write_file(filename="", text=""):
         Nothing.
     """
     with open(filename, "w") as my_file:
-        nb_char = my_file.write(len(text))
+        nb_char = my_file.write(str(text))
     my_file.close()
     return (nb_char))
