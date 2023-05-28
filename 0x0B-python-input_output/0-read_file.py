@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Write to a file"""
 
+
 def read_file(filename=""):
     """Read file template function.
     Args:
