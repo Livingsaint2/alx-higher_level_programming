@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""File manipulation to get number of lines"""
+"""File manipulation to create or write a file"""
 
 
-def number_of_lines(filename=""):
-    """Reads the number of lines.
+def write_file(filename="", text=""):
+    """Writes text into a file.
     Args:
-        filename: path to the file that wants to be read.
+        filename: path to the file that wants to be written.
+        text: string to be input inside the file
     Returns:
-        counter: number of lines of file.
+        Nothing.
     """
-    counter = 0
-    with open(filename, "r") as my_file:
-        for line in my_file:
-            counter += 1
+    with open(filename, "w") as my_file:
+        nb_char = my_file.write(str(text))
     my_file.close()
-    return (counter)
+    return (nb_char))
