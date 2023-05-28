@@ -2,6 +2,7 @@
 """Write to a file"""
 
 
+
 def read_file(filename=""):
     """Read file template function.
     Args:
@@ -9,8 +10,6 @@ def read_file(filename=""):
     Returns:
         Nothing.
     """
-
-
     with open(filename, "r") as my_file:
         print(my_file.read(), end="")
     my_file.close()
