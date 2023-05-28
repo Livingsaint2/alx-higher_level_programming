@@ -8,6 +8,8 @@ def read_file(filename=""):
     Returns:
         Nothing.
     """
+
+
     with open(filename, "r") as my_file:
         print(my_file.read(), end="")
     my_file.close()
